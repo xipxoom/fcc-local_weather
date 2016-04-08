@@ -2,12 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, inital-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="./css/weather-icons.css">
   <link rel="stylesheet" href="./css/main.css">
+  <title>Your local weather - right now!</title>
 </head>
 <body>
-<i class="wi wi-day-sunny"></i>
+  <main>
+    <div class="weather">
+      <div class="weatherIcon">
+        <i class="wi wi-day-sunny-overcast"></i>
+      </div>
+      <div class="weatherDetail">
+        <p class="weatherCity">South Bend</p>
+        <p class="weatherCurrent">Mostly Sunny and 70<i class="wi wi-fahrenheit"></i></p>
+      </div>
+    </div>
+  </main>
 
   <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
   <script src="./js/app.js"></script>
