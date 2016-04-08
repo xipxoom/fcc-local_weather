@@ -1,9 +1,21 @@
 //onReady
 $(function(){
+  $(".weatherDetail a").on("click", function(e) {
+    e.preventDefault();
+    var deg = $(".weatherTemperature").text();
+
+    // convert temperature
+    if ($(".degreeScale").hasClass("wi-fahrenheit")) {
+      $(".weatherTemperature").text(((deg - 32) * 5/9).toFixed(1));
+      $(".degreeScale").removeClass("wi-fahrenheit").addClass("wi-celsius");
+    } else {
+      $(".weatherTemperature").text((deg * 9/5 + 32).toFixed(1));
+      $(".degreeScale").removeClass("wi-celsius").addClass("wi-fahrenheit");
+    }
+  });
+
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      console.log("Lat: ", position.coords.latitude);
-      console.log("Lng: ", position.coords.longitude);
 
       $.ajax({
         url: "http://api.openweathermap.org/data/2.5/weather",
@@ -15,11 +27,10 @@ $(function(){
         },
         dataType: "json"
       }).done(function(json){
-        console.log(json);
 
         $(".weatherCity").text(json.name);
         $(".weatherDescription").text(json.weather[0].description + " and ");
-        $(".weatherTemperature").text(Math.floor(json.main.temp));
+        $(".weatherTemperature").text(json.main.temp.toFixed(1));
         $(".degreeScale").removeClass("wi-celsius").addClass("wi-fahrenheit");
 
         // Should we use the day or night icon?
@@ -29,6 +40,7 @@ $(function(){
         } else {
           $(".weatherIcon i").addClass("wi-owm-night-" + json.weather[0].id);
         }
+
       }).fail(function(xhr, status, error) {
         console.log("Failed to get weather.");
         console.log("Error: ", error);
