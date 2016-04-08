@@ -1,9 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
 body {
   font-family: 'Lato', sans-serif;
   background: #222;
 }
 main {
-  margin: 60px;
+  margin: 5%;
 }
 a, a:visited {
   color: #fff;
@@ -36,4 +40,14 @@ a, a:visited {
   color: #fff;
   height: 80px;
   background: linear-gradient(to bottom, rgba(208,228,247,1) 0%,rgba(115,177,231,1) 24%,rgba(10,119,213,1) 50%,rgba(83,159,225,1) 79%,rgba(135,188,234,1) 100%);
+}
+@media (max-width: 475px) {
+  main {
+    margin: 5% 0;
+  }
+}
+@media (max-width: 427px) {
+  .weatherDetail {
+    margin: 0 auto;
+  }
 }
