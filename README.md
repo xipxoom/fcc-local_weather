@@ -22,3 +22,6 @@ Build a [CodePen.io](https://codepen.io) app that is functionally similar to [th
 * The browser geolocation API.
 * If the above fails, maybe attempt to locate by ip from [ipinfo.io](http://ipinfo.io).
 * Weather icons from [weathericons.io](http://weathericons.io).
+
+## Notes:
+Hosted on [codepen.io](http://codepen.io/xipxoom/full/ZWvwRa/).
