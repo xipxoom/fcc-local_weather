@@ -25,3 +25,6 @@ Build a [CodePen.io](https://codepen.io) app that is functionally similar to [th
 
 ## Notes:
 Hosted on [codepen.io](http://codepen.io/xipxoom/full/ZWvwRa/).
+
+## TODO:
+Handle errors on geolocation lookup and try to find user's location via IP.
